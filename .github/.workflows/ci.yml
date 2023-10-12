@@ -1,0 +1,23 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - os: ubuntu-latest
+          - os: macOS-latest
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+
+      - run: brew --version
+      - run: brew install --verbose --build-from-source ./martin.rb
+      - run: martin --version
+      - run: mbtiles --version
