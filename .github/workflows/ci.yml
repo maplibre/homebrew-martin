@@ -1,6 +1,6 @@
 name: CI
 
-on: [pull_request]
+on: [ pull_request ]
 
 jobs:
   test:
@@ -17,7 +17,22 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v4
 
+      - name: Set up Homebrew
+        if: matrix.os == 'ubuntu-latest'
+        uses: Homebrew/actions/setup-homebrew@master
+
       - run: brew --version
-      - run: brew install --verbose --build-from-source ./martin.rb
+      - run: brew install --verbose --formula --build-from-source ./martin.rb
       - run: martin --version
       - run: mbtiles --version
+
+
+  # This final step is needed to mark the whole workflow as successful
+  # Don't change its name - it is used by the merge protection rules
+  done:
+    name: CI Finished
+    runs-on: ubuntu-latest
+    needs: [ test ]
+    steps:
+      - name: Finished
+        run: echo "CI finished successfully"
