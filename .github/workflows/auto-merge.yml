@@ -9,12 +9,21 @@ jobs:
     # Not sure if "nyurik" is correct here - the PR seem to be created by this account because of the token?
     if: github.actor == 'nyurik' && contains(github.event.pull_request.labels.*.name, 'auto-update')
     steps:
+      - name: Check if stable release
+        id: check-tag
+        run: |
+          # Check PR title
+          if [[ ! ${{github.event.pull_request.title}} =~ ^Update to refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "is_stable_release=true" >> $GITHUB_OUTPUT
+          fi
       - name: Approve formula PRs
+        if: steps.check-tag.outputs.is_stable_release == 'true'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Enable auto-merge for formula PRs
+        if: steps.check-tag.outputs.is_stable_release == 'true'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
