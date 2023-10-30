@@ -1,1 +1,1 @@
-See [https://github.com/maplibre/martin](maplibre/martin)
+See [maplibre/martin](https://github.com/maplibre/martin)
