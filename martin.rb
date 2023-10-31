@@ -11,7 +11,7 @@ class Martin < Formula
 
   on_macos do
     on_arm do
-      sha256 "0d7645264af4ab7c412d8a3b17d29e2d172dd89b444827b94ef503f8900c86f2}"
+      sha256 "0d7645264af4ab7c412d8a3b17d29e2d172dd89b444827b94ef503f8900c86f2"
       url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-Darwin-aarch64.tar.gz"
     end
     on_intel do
