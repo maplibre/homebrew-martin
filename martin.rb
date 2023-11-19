@@ -12,22 +12,22 @@ class Martin < Formula
   on_macos do
     on_arm do
       sha256 "0d7645264af4ab7c412d8a3b17d29e2d172dd89b444827b94ef503f8900c86f2"
-      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-Darwin-aarch64.tar.gz"
+      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-aarch64-apple-darwin.tar.gz"
     end
     on_intel do
       sha256 "f2e6a8689515a89793d2de430e20d4781eb0b46e2b7953b6f740a45c4d3d4e21"
-      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-Darwin-x86_64.tar.gz"
+      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-x86_64-apple-darwin.tar.gz"
     end
   end
 
   on_linux do
     on_arm do
       sha256 "9a0c0db852914dcbd19c37c3b81233dab886957a502b0cb77c8b3638895f31ed"
-      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-Linux-aarch64-musl.tar.gz"
+      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-x86_64-unknown-linux-musl.tar.gz"
     end
     on_intel do
       sha256 "3ebce6b325ff61c19660fde41bf5097f76976bdfee0e44294b706a5e7b8cc69d"
-      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-Linux-x86_64-musl.tar.gz"
+      url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-x86_64-unknown-linux-gnu.tar.gz"
     end
   end
 
