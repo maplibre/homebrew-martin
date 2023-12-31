@@ -4,29 +4,29 @@
 #
 
 class Martin < Formula
-  current_version="0.12.0"
+  current_version="0.13.0"
 
   desc "Blazing fast and lightweight tile server with PostGIS, MBTiles, and PMTiles support, plus an mbtiles tool"
   homepage "https://github.com/maplibre/martin"
 
   on_macos do
     on_arm do
-      sha256 "435083a5404f0c50911104beada1589a9801c8bd3a58285516ad2f7e02b34b87"
+      sha256 "2fe29bccf58fdede605dad4a6ccc64454dc75417ed80f3c8c1c913e71c03bf01"
       url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-aarch64-apple-darwin.tar.gz"
     end
     on_intel do
-      sha256 "18241a6f82dd837b2c4b0f6134ed0add8b4be064d38e5d5b86e47d36e30c2af1"
+      sha256 "2050453fb65bf000de59d5b8239e0e6339efe4f549d281e7a66522a9aef3d1cc"
       url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-x86_64-apple-darwin.tar.gz"
     end
   end
 
   on_linux do
     on_arm do
-      sha256 "8a4df93c934253f630beac352a6cab9d9c973ef70f73c6580e8c47b25226edbc"
+      sha256 "bd33ad791b869257aa792e2054573e2ab940d65ab686580a85e9a4c0a6d9908d"
       url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-aarch64-unknown-linux-musl.tar.gz"
     end
     on_intel do
-      sha256 "39a20b56f80b155ce707b7a3992e69ca9c14d5bf308aeabbbc71c42aafa9e998"
+      sha256 "c46c82f595a1405d9f3abb534ac590b21ab3b57547fcd9c27acf8d3ebd8acb25"
       url "https://github.com/maplibre/martin/releases/download/v#{current_version}/martin-x86_64-unknown-linux-musl.tar.gz"
     end
   end
