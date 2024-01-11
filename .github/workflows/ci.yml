@@ -24,6 +24,7 @@ jobs:
       - run: brew --version
       - run: brew install --verbose --formula --build-from-source ./martin.rb
       - run: martin --version
+      - run: martin-cp --version
       - run: mbtiles --version
 
 
