@@ -4,6 +4,9 @@ on: [ pull_request ]
 
 jobs:
   test:
+    env:
+      HOMEBREW_DEVELOPER: 1
+
     runs-on: ${{ matrix.os }}
 
     strategy:
