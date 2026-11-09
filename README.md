@@ -1,4 +1,34 @@
-Homebrew installation files for [Martin](https://github.com/maplibre/martin)
+Martin is in [homebrew-core](https://formulae.brew.sh/formula/martin), so this tap is no longer updated.
+
+```bash
+brew install martin
+```
+
+If you installed martin from this tap, switch with
+
+```bash
+brew uninstall martin
+brew untap maplibre/martin
+brew install martin
+```
+
+> [!IMPORTANT]
+> If you are using [Homebrew](https://brew.sh/) you can install the [`martin` formula from homebrew-core](https://formulae.brew.sh/formula/martin) using
+> 
+> ```bash
+> brew install martin
+> martin --help
+> ```
+> 
+> The formula is maintained by Homebrew and follows stable releases only.
+> If you installed martin from the former `maplibre/martin` tap.
+> Switch to the homebrew-core formula with
+> 
+> ```bash
+> brew uninstall martin
+> brew untap maplibre/martin
+> brew install martin
+> ```
 
 ## License
 
