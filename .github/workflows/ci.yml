@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with: { persist-credentials: false }
       - name: Check tap_migrations.json
         run: jq -e '.martin == "homebrew/core"' tap_migrations.json
